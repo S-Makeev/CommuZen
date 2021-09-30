@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace CommuZen0._01
 {
@@ -27,14 +28,17 @@ namespace CommuZen0._01
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IArticleService, ArticleService>();
-            services.AddScoped<IJobPostingService, JobPostingService>();
-            services.AddScoped<IChatService, ChatService>();
+            services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration.GetConnectionString("Db")));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CommuZen0._01", Version = "v1" });
             });
+            
+            services.AddScoped<IArticleService, ArticleService>();
+            services.AddScoped<IJobPostingService, JobPostingService>();
+            services.AddScoped<IChatService, ChatService>();
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
