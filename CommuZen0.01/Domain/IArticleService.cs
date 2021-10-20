@@ -8,7 +8,7 @@ namespace CommuZen0._01.Domain
 {
     public interface IArticleService
     {
-        List<ArticleEntity> GetAll();
-        Task<int> Create(ArticleEntity entity);
+        Task<List<ArticleEntity>> GetAll();
+        Task<long> Create(ArticleEntity entity);
     }
 }

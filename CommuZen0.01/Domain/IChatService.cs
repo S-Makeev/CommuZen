@@ -9,6 +9,7 @@ namespace CommuZen0._01.Domain
    public interface IChatService
     {
         List<ChatEntity> GetAll();
-        Task<int> Create(ChatEntity entity);
+        Task<long> Create(ChatEntity entity);
+        Task<List<UserEntity>> GetUsersByChat(long chatId);
     }
 }

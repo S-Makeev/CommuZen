@@ -8,8 +8,8 @@ namespace CommuZen0._01.Domain
 {
     public interface IJobPostingService
     {
-        List<JobPostingEntity> GetAll();
-        Task<int> Create(JobPostingEntity entity);
+        List<VacancyEntity> GetAll();
+        Task<int> Create(VacancyEntity entity);
     }
 }
   

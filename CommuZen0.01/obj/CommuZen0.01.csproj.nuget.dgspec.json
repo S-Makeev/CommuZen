@@ -1,29 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\V.Makeev\\source\\repos\\CommuZen0.01\\CommuZen0.01\\CommuZen0.01.csproj": {}
+    "C:\\Projects\\CommuZen\\CommuZen0.01\\CommuZen0.01.csproj": {}
   },
   "projects": {
-    "C:\\Users\\V.Makeev\\source\\repos\\CommuZen0.01\\CommuZen0.01\\CommuZen0.01.csproj": {
+    "C:\\Projects\\CommuZen\\CommuZen0.01\\CommuZen0.01.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\V.Makeev\\source\\repos\\CommuZen0.01\\CommuZen0.01\\CommuZen0.01.csproj",
+        "projectUniqueName": "C:\\Projects\\CommuZen\\CommuZen0.01\\CommuZen0.01.csproj",
         "projectName": "CommuZen0.01",
-        "projectPath": "C:\\Users\\V.Makeev\\source\\repos\\CommuZen0.01\\CommuZen0.01\\CommuZen0.01.csproj",
-        "packagesPath": "C:\\Users\\V.Makeev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\V.Makeev\\source\\repos\\CommuZen0.01\\CommuZen0.01\\obj\\",
+        "projectPath": "C:\\Projects\\CommuZen\\CommuZen0.01\\CommuZen0.01.csproj",
+        "packagesPath": "C:\\Users\\rave9\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\CommuZen\\CommuZen0.01\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\V.Makeev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\rave9\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.emzi0767.com/api/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -41,6 +41,24 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
@@ -64,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

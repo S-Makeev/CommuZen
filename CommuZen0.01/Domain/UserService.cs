@@ -23,11 +23,13 @@ namespace CommuZen0._01.Domain
             return result.Entity.Id;
         }
 
-        public List<UserEntity> GetAll() => _context.Users.ToList();
+        public List<UserEntity> GetAll() => _context.Users.Include(x => x.Articles).ToList();
 
         public async Task<UserEntity> GetById(long id)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            var user = await _context.Users
+                .Include(x => x.Articles)
+                .FirstOrDefaultAsync(x => x.Id == id);
 
             return user;
         }

@@ -27,7 +27,7 @@ namespace CommuZen0._01.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(JobPostingEntity entity)
+        public async Task<IActionResult> Create(VacancyEntity entity)
         {
             var result = await _jobpostingService.Create(entity);
             return Ok(result);

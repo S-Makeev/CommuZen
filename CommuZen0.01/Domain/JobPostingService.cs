@@ -8,15 +8,15 @@ namespace CommuZen0._01.Domain
 {
     public class JobPostingService : IJobPostingService
     {
-        public async Task<int> Create(JobPostingEntity entity)
+        public async Task<int> Create(VacancyEntity entity)
         {
             return 1;
         }
 
-        public List<JobPostingEntity> GetAll()
+        public List<VacancyEntity> GetAll()
         {
-            var collection = new List<JobPostingEntity>();
-            collection.Add(new JobPostingEntity { Body = "Service", Header = "Jobs", Id = 1 });
+            var collection = new List<VacancyEntity>();
+            collection.Add(new VacancyEntity { Body = "Service", Header = "Jobs", Id = 1 });
             return collection;
         }
     }

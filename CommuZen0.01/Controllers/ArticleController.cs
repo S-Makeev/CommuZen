@@ -21,9 +21,9 @@ namespace CommuZen0._01.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var result = _articleService.GetAll();
+            var result = await _articleService.GetAll();
             return Ok(result);
         }
         
@@ -31,7 +31,7 @@ namespace CommuZen0._01.Controllers
         public async Task<IActionResult> Create(ArticleEntity entity)
         {
             var result = await _articleService.Create(entity);
-            return Ok(result);
+            return Ok(new {id = result});
         }
     }
 }

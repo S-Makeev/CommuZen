@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CommuZen0._01.DataAccess.Entities
+﻿namespace CommuZen0._01.DataAccess.Entities
 {
-    public class ArticleEntity
+    public class ArticleEntity : BaseEntity
     {
-        public int Id { get; set; }
         public string Header { get; set; }
         public string Body { get; set; }
+        public long? UserId { get; set; }
+        public UserEntity User { get; set; }
     }
 }
