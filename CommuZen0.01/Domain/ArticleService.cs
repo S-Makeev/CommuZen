@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CommuZen0._01.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CommuZen0._01.Domain
@@ -27,7 +28,20 @@ namespace CommuZen0._01.Domain
         public async Task<List<ArticleEntity>> GetAll()
         {
             var articles = await _context.Articles.Include(x => x.User).ToListAsync();
+            
             return articles;
+        }
+        
+        public async Task<ArticleEntity> GetById(long id)
+        {
+            var article = await _context.Articles.Include(x => x.User).FirstOrDefaultAsync(x => x.Id == id);
+
+            if (article == null)
+            {
+                throw new EntityNotFoundException();
+            }
+            
+            return article;
         }
     }
 }

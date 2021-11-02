@@ -10,5 +10,6 @@ namespace CommuZen0._01.Domain
     {
         Task<List<ArticleEntity>> GetAll();
         Task<long> Create(ArticleEntity entity);
+        Task<ArticleEntity> GetById(long id);
     }
 }

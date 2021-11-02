@@ -19,6 +19,7 @@ namespace CommuZen0._01.Controllers
             _chatService = chatservice;
         }
 
+        [NewMethod(Name = "getall")]
         [HttpGet]
         public IActionResult GetAll()
         {

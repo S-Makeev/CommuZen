@@ -26,8 +26,7 @@ namespace CommuZen0._01.Domain
 
         public List<ChatEntity> GetAll()
         {
-            var collection = new List<ChatEntity>();
-            collection.Add(new ChatEntity { Body = "Service", Header = "Chat", Id = 1 });
+            var collection = new List<ChatEntity> { new() { Name = "Service" } };
             return collection;
         }
 

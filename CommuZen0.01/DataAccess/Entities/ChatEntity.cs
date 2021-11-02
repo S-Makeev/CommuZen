@@ -1,8 +1,12 @@
-﻿namespace CommuZen0._01.DataAccess.Entities
+﻿using System.Collections.Generic;
+
+namespace CommuZen0._01.DataAccess.Entities
 {
     public class ChatEntity : BaseEntity
     {
-        public string Header { get; set; }
-        public string Body { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string PictureUrl { get; set; }
+        public List<MessageEntity> Messages { get; set; }
     }
 }
