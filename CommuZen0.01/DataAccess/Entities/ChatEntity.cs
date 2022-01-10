@@ -8,5 +8,7 @@ namespace CommuZen0._01.DataAccess.Entities
         public string Description { get; set; }
         public string PictureUrl { get; set; }
         public List<MessageEntity> Messages { get; set; }
+        public long? OwnerId { get; set; }
+        public UserEntity Owner { get; set; }
     }
 }
