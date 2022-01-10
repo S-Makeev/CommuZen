@@ -34,7 +34,7 @@ namespace CommuZen0._01.Domain
         
         public async Task<ArticleEntity> GetById(long id)
         {
-            var article = await _context.Articles.Include(x => x.User).FirstOrDefaultAsync(x => x.Id == id);
+            var article = await _context.Articles.Include(x => x.User).Include(x => x.CommentSections).FirstOrDefaultAsync(x => x.Id == id);
 
             if (article == null)
             {

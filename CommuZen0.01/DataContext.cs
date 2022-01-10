@@ -9,6 +9,8 @@ namespace CommuZen0._01
         {
         }
         
+        public DbSet<CommentSectionEntity> Comments { get; set; }
+        public DbSet<MessageEntity> Messages { get; set; }
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<ArticleEntity> Articles { get; set; }
         public DbSet<UserChatEntity> UserChats { get; set; }

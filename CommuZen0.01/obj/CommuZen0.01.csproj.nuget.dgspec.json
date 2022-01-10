@@ -1,29 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\CommuZen\\CommuZen0.01\\CommuZen0.01.csproj": {}
+    "C:\\Users\\V.Makeev\\source\\repos\\CommuZen0.01\\CommuZen0.01\\CommuZen0.01.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\CommuZen\\CommuZen0.01\\CommuZen0.01.csproj": {
+    "C:\\Users\\V.Makeev\\source\\repos\\CommuZen0.01\\CommuZen0.01\\CommuZen0.01.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\CommuZen\\CommuZen0.01\\CommuZen0.01.csproj",
+        "projectUniqueName": "C:\\Users\\V.Makeev\\source\\repos\\CommuZen0.01\\CommuZen0.01\\CommuZen0.01.csproj",
         "projectName": "CommuZen0.01",
-        "projectPath": "C:\\Projects\\CommuZen\\CommuZen0.01\\CommuZen0.01.csproj",
-        "packagesPath": "C:\\Users\\rave9\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\CommuZen\\CommuZen0.01\\obj\\",
+        "projectPath": "C:\\Users\\V.Makeev\\source\\repos\\CommuZen0.01\\CommuZen0.01\\CommuZen0.01.csproj",
+        "packagesPath": "C:\\Users\\V.Makeev\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\V.Makeev\\source\\repos\\CommuZen0.01\\CommuZen0.01\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\rave9\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\V.Makeev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.emzi0767.com/api/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

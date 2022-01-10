@@ -52,18 +52,77 @@ namespace CommuZen0._01.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("Body")
-                        .HasColumnType("text");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("Header")
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PictureUrl")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.ToTable("Chats");
+                });
+
+            modelBuilder.Entity("CommuZen0._01.DataAccess.Entities.CommentSectionEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<long?>("ArticleId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<long?>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("CommuZen0._01.DataAccess.Entities.MessageEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<long?>("ChatId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("text");
+
+                    b.Property<long?>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ChatId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("CommuZen0._01.DataAccess.Entities.UserChatEntity", b =>
@@ -148,6 +207,36 @@ namespace CommuZen0._01.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("CommuZen0._01.DataAccess.Entities.CommentSectionEntity", b =>
+                {
+                    b.HasOne("CommuZen0._01.DataAccess.Entities.ArticleEntity", "Article")
+                        .WithMany("CommentSections")
+                        .HasForeignKey("ArticleId");
+
+                    b.HasOne("CommuZen0._01.DataAccess.Entities.UserEntity", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Article");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CommuZen0._01.DataAccess.Entities.MessageEntity", b =>
+                {
+                    b.HasOne("CommuZen0._01.DataAccess.Entities.ChatEntity", "Chat")
+                        .WithMany("Messages")
+                        .HasForeignKey("ChatId");
+
+                    b.HasOne("CommuZen0._01.DataAccess.Entities.UserEntity", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Chat");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("CommuZen0._01.DataAccess.Entities.UserChatEntity", b =>
                 {
                     b.HasOne("CommuZen0._01.DataAccess.Entities.ChatEntity", "Chat")
@@ -161,6 +250,16 @@ namespace CommuZen0._01.Migrations
                     b.Navigation("Chat");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CommuZen0._01.DataAccess.Entities.ArticleEntity", b =>
+                {
+                    b.Navigation("CommentSections");
+                });
+
+            modelBuilder.Entity("CommuZen0._01.DataAccess.Entities.ChatEntity", b =>
+                {
+                    b.Navigation("Messages");
                 });
 
             modelBuilder.Entity("CommuZen0._01.DataAccess.Entities.UserEntity", b =>
